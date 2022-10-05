@@ -1,1 +1,2 @@
 Bert with Multi-label classification model + Classifier Chain (SK-learn)
+This code is the replication from https://towardsdatascience.com/building-a-multi-label-text-classifier-using-bert-and-tensorflow-f188e0ecdc5d
