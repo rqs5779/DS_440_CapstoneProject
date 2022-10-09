@@ -10,7 +10,7 @@ Original file is located at
 import pandas as pd
 import numpy as np
 
-# preprocessing dataset
+# preprocessing dataset -RS
 col_list = ["type", "rating", "title"]
 dataframe = pd.read_csv("/Users/raymond/Desktop/Capstone Project/netflix_titles.csv", usecols=col_list)
 ratings = ['TV-MA', 'TV-14', 'TV-PG', 'TV', 'R', 'PG-13', 'TV-Y']
