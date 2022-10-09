@@ -1,2 +1,2 @@
-Baseline model for Netflix NLP with Logistic Regression Model
+Baseline model for Netflix NLP with Logistic Regression Model and SK-Learn Multi-Class Classifier library
 This is the replication code from https://www.section.io/engineering-education/multi-output-classification-with-machine-learning/
