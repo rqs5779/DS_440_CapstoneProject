@@ -379,7 +379,7 @@ y_pred = (mlp.predict(X_test_pooled_output)>0.5)*1
 fig = px.histogram(acc, nbins=20, labels={'value':'Accuracy score'})
 fig.show()
 
-#Author Zihan Luo, Accuracy score
+#Author Zihan Luo, Accuracy score for epoch 39
 history.history['accuracy'].pop()
 
 #Author Zihan Luo
