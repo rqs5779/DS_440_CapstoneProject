@@ -10,18 +10,24 @@ Original file is located at
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("sample_data/netflix_titles_dataset.csv")
+# preprocessing dataset
+col_list = ["type", "rating", "title"]
+dataframe = pd.read_csv("/Users/raymond/Desktop/Capstone Project/netflix_titles.csv", usecols=col_list)
+ratings = ['TV-MA', 'TV-14', 'TV-PG', 'TV', 'R', 'PG-13', 'TV-Y']
+df = dataframe[dataframe['rating'].isin(ratings)]
+print(df.head())
 
-df.head()
 
-df['type'].value_counts()
 
-df['rating'].value_counts()
+print(df['type'].value_counts())
 
-!pip install neattext
+print(df['rating'].value_counts())
+
+# !pip install neattext
 
 import neattext.functions as nfx
 
+# df['title'] = df['title'].nfx.lower()
 df['title'] = df['title'].str.lower()
 
 df['title'] = df['title'].apply(nfx.remove_stopwords)
@@ -47,36 +53,38 @@ pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),
 
 pipe_lr.fit(x_train,y_train)
 
-pipe_lr.score(x_test,y_test)
 
-print(x_test.iloc[0])
-print("Actual Prediction:",y_test.iloc[0])
+print(pipe_lr.score(x_test,y_test))
 
-pred1 = x_test.iloc[0]
 
-pred1
+# print(x_test.iloc[0])
+# print("Actual Prediction:",y_test.iloc[0])
 
-pipe_lr.predict([pred1])
+# pred1 = x_test.iloc[0]
 
-print(pipe_lr.classes_)
-pipe_lr.predict_proba([pred1])
+# pred1
 
-print(pred1)
+# pipe_lr.predict([pred1])
 
-from sklearn.metrics import confusion_matrix
-pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),
-                          ('lr_multi',MultiOutputClassifier(LogisticRegression()))])
-pipe_lr.fit(x_train,y_train)
-y_pred = pipe_lr.predict(x_test)
-print(y_test)
-print(y_test.value_counts())
-print(y_pred)
+# print(pipe_lr.classes_)
+# pipe_lr.predict_proba([pred1])
 
-! pip install category_encoders
+# print(pred1)
 
-import category_encoders as ce
-le = ce.OneHotEncoder(return_df=False, handle_unknown="ignore")
-y_fitedpred = le.fit_transform(y_pred)
-y_fitedtest = le.fit_transform(y_test)
-cm = confusion_matrix(y_fitedtest.argmax(axis=1), y_fitedpred.argmax(axis=1))
-print(cm)
+# from sklearn.metrics import confusion_matrix
+# pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),
+#                           ('lr_multi',MultiOutputClassifier(LogisticRegression()))])
+# pipe_lr.fit(x_train,y_train)
+# y_pred = pipe_lr.predict(x_test)
+# print(y_test)
+# print(y_test.value_counts())
+# print(y_pred)
+
+# ! pip install category_encoders
+# author Zihan Luo
+# import category_encoders as ce
+# le = ce.OneHotEncoder(return_df=False, handle_unknown="ignore")
+# y_fitedpred = le.fit_transform(y_pred)
+# y_fitedtest = le.fit_transform(y_test)
+# cm = confusion_matrix(y_fitedtest.argmax(axis=1), y_fitedpred.argmax(axis=1))
+# print(cm)
