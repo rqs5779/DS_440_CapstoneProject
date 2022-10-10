@@ -1,0 +1,6 @@
+df['title'] = df['title'].str.lower()
+df['title'] = df['title'].apply(lambda x: x.lower())
+df['title'] = df['title'].apply(nfx.remove_stopwords)
+df['title'] = df['title'].apply(nfx.remove_puncts)
+df['title'] = df['title'].apply(nfx.remove_special_characters)
+df['title'] = df['title'].apply(nfx.remove_emojis)
