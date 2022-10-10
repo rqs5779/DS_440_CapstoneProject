@@ -1,3 +1,5 @@
 Modified bert model to train rating and types with MLP model based on the replication 
-A repllication from kaggle dataset:
+A repllication and modified version from kaggle dataset:
                                         https://www.kaggle.com/code/sarthakvajpayee/netflix-eda-plotly-seaborn-bert-nlp
+                                        
+Modified the y_label from genre to a combine label of type and rating.
