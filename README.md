@@ -7,7 +7,7 @@ This Repo contains the code for a CapstoneProject for Data Science 440 class. Th
 Used dataset from:
   https://www.kaggle.com/datasets/sid321axn/beijing-multisite-airquality-data-set
   https://archive.ics.uci.edu/ml/datasets/BlogFeedback#
-And part of the preprocessing data is referenced from kaggle.
+And part of the code to preprocess data is referenced from kaggle.
 
 
 Group 11: Ruimeng Shao, Zihan Luo
